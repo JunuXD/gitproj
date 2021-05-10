@@ -7,8 +7,20 @@ import matplotlib.ticker as ticker
 
 
 data=[]
-for i in range(342, 372):
-    URL = "https://comic.naver.com/webtoon/detail.nhn?titleId=552960&no=" + str(i) + "&weekday=fri"
+#for i in range(342, 372):
+    #URL = "https://comic.naver.com/webtoon/detail.nhn?titleId=552960&no=" + str(i) + "&weekday=fri"
+    #html = urlopen(URL)
+    #soup = BeautifulSoup(html, 'lxml')
+
+    #rawrating = str(soup.find_all('strong'))
+    #rating = re.search("(\d\.\d\d)", rawrating)
+    #pp=rating.group()
+
+    #print('Rating : ' ,pp)
+    #data.append(pp)
+
+for b in range(342, 372):
+    URL = "https://comic.naver.com/webtoon/detail.nhn?titleId=552960&no=" + str(b) + "&weekday=fri"
     html = urlopen(URL)
     soup = BeautifulSoup(html, 'lxml')
 
@@ -18,6 +30,7 @@ for i in range(342, 372):
 
     print('Rating : ' ,pp)
     data.append(pp)
+
 
 #print(data)
 

@@ -1,0 +1,15 @@
+import _csv
+from selenium import webdriver
+from webdriver_manager.chrome import chromeDriverManager
+URL = 'https://www.gopax.co.kr/'
+
+driver = webdriver.chrome(chromeDriverManager().install())
+driver.ger(URL)
+
+depth_1_tbody = driver.find_element_by_xpath("//*[@id=\"react\"]/div/div[1]/div[2]/div[2]/table/tbody"
+depth_2_tr = depth_1_tbody.find_elements_by_tag_name("tr")
+
+for a in depth_2_tr:
+    bit=a.text
+    bit_list=bit.split("\n")
+    print(bit_list)
